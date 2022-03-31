@@ -74,10 +74,10 @@ public class Sketch extends PApplet {
     int intX = 0;
     int intY = 0;
 
-    for(int intRow = 0; intRow < 30; intRow++){
-      for(int intColumn = 0; intColumn < 30; intColumn++){
-        intX = 3 + 0;  //Instead of zero, calculate the proper intX location using 'intRow'
-        intY = 300 + 3 + 0; //Instead of zero, calculate the proper intY location using 'intColumn'
+    for(int intRow = 0; intRow < 300; intRow+= 10){
+      for(int intColumn = 0; intColumn < 300; intColumn+= 10){
+        intX = 3 + intRow;  
+        intY = 300 + 3 + intColumn;
 
         fill(255);
         noStroke();
@@ -92,15 +92,52 @@ public class Sketch extends PApplet {
    * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
    */
   public void draw_section2(){
+    int intX = 0;
+    int intY = 0;
 
+    for(int intRow = 0; intRow < 300; intRow+= 10){
+      for(int intColumn = 0; intColumn < 300; intColumn+= 10){
+        intX = 303 + intRow;
+        
+        intY = 300 + 3 + intColumn; 
+        
+        if(intRow % 4 == 0){
+          fill(0);
+          noStroke();
+          rect(intX, intY, 5, 5);
+        }else{
+         fill(255);
+        noStroke(); 
+        rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
-
   /**
    * Use the modulus operator and an if/else statement to select the color.
    * Don't use multiple 'if' statements.
    */
   public void draw_section3(){
+    int intX = 0;
+    int intY = 0;
 
+    for(int intRow = 0; intRow < 300; intRow+= 10){
+      for(int intColumn = 0; intColumn < 300; intColumn+= 10){
+        intX = 603 + intRow;  
+        
+        intY = 300 + 3 + intColumn; 
+        
+        if(intColumn % 4 == 0){
+        fill(0);
+        noStroke();
+        rect(intX, intY, 5, 5);
+        }else{
+         fill(255);
+        noStroke(); 
+        rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
 
   /**
@@ -108,24 +145,96 @@ public class Sketch extends PApplet {
    */
   public void draw_section4(){
 
+    int intX = 0;
+    int intY = 0;
+
+    for(int intRow = 0; intRow < 300; intRow+= 10){
+      for(int intColumn = 0; intColumn < 300; intColumn+= 10){
+        intX = 903 + intRow;
+        
+        intY = 300 + 3 + intColumn; 
+        
+        if(intRow % 20 == 0 || intColumn % 20 == 0){
+          fill(0);
+          noStroke();
+          rect(intX, intY, 5, 5);
+        }else if (intRow % 20 != 0 || intColumn % 20 != 0){
+         fill(255);
+        noStroke(); 
+        rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
 
   /**
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5(){
+    int intX = 0;
+    int intY = 0;
+    
+      for(int intColumn = 0; intColumn < 300; intColumn += 10){
+        for(int intRow = 302 - intColumn; intRow < 302; intRow += 10){
+    
+          fill(255);
+          rect(intRow, intColumn, 5, 5);
+           
+        }
+      }
 
   }
 
   public void draw_section6(){
+    int intX = 0;
+    int intY = 0;
+    
+      for(int intColumn = 0; intColumn <= 290; intColumn+= 10){
+        for(int intRow = 0; intRow <= intColumn; intRow+= 10){
+          intX = 303 + intRow;  
+          intY = 3 + intColumn;
+    
+          fill(255);
+          noStroke();
+          rect(intX, intY, 5, 5);
 
+      }
+    }
   }
 
   public void draw_section7(){
+     int intX = 0;
+    int intY = 0;
+
+    for(int intColumn = 0; intColumn < 300; intColumn += 10){
+      for(int intRow = 290 - intColumn ; intRow >= 0; intRow -= 10){
+        intX = 600 + 3 + intRow;  
+        intY = 3 + intColumn; 
+
+        // Draw squares 
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+   } 
 
   }
   
   public void draw_section8(){
+    int intX = 0;
+    int intY = 0;
+
+      for(int intRow = 0; intRow < 300; intRow += 10){
+        for(int intColumn = 0; intColumn <= intRow; intColumn += 10){
+          intX = 900 + 3 + intRow;
+          intY = 3 + intColumn;
+  
+          fill(255);
+          noStroke();
+          rect(intX, intY, 5, 5);
+  
+        }
+      }
 
   }
 
